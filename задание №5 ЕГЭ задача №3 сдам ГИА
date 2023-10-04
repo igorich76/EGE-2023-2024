@@ -1,0 +1,18 @@
+##
+for var i := 100 to 1000 do
+begin
+var N := i;
+var a := N div 100; Println(a);
+var b := N div 10 mod 10; Println(b);
+var c := N mod 10; Println(c);
+var num1 := a + b; Println('Первое число:', num1);
+var num2 := b + c; Println('Второе число:', num2);
+var first := IntToStr(Min(num1,num2));
+var second := IntToStr(Max(num1,num2));
+var s1 := first + second; Println(s1);
+if (s1 = '1115') then 
+  begin
+    Print('Ура, победа =', i); 
+    break;
+  end;
+end;
