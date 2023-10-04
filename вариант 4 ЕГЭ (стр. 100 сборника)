@@ -1,0 +1,23 @@
+вариант 4 ЕГЭ (стр. 100 сборника)
+## //вариант 4 ЕГЭ (стр. 100 сборника)
+uses school;
+var N := ReadlnInteger('Введите число:');
+var a := ToBase(N,2); 
+Println('Двоичная запись N:', a);
+var cnt := 0;
+for var i:= 1 to Length(a) do
+  if a[i] = '1' then cnt +=1; 
+Println('Сумма цифр числа:', cnt);
+var b := cnt mod 2; 
+Println('Отсаток от деления на 2:', b);
+a := a + b; // можно a += cnt mod 2; 
+Println('Дописанный остаток:', a);
+cnt := 0;
+for var i:= 1 to Length(a) do
+  if a[i] = '1' then cnt +=1; 
+Println('Сумма цифр числа:', cnt);
+var с := cnt mod 2;
+Println('Осnаток от деления на 2:', с);
+a := a + с; // можно a += cnt mod 2;
+Println('Дописанный остаток:', a);
+Println(Dec(a,2));
