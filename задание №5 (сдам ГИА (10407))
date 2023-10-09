@@ -1,0 +1,40 @@
+================= тестовое решение условия задачи ========
+// после добавить цикл и условие
+##
+var digit := 9575;
+var digit_1 := digit div 1000 mod 10; Print(digit_1);
+var digit_2 := digit div 100 mod 10; Print(digit_2);
+var digit_3 := digit div 10 mod 10; Print(digit_3);
+var digit_4 := digit mod 10; Println(digit_4);
+var num1 := digit_1 + digit_2;
+var num2 := digit_2 + digit_3;
+var num3 := digit_3 + digit_4;
+var first := IntToStr(Min(num1, num2, num3));
+var second := IntToStr(Max(num1, num2, num3));
+Print(first + second)
+========================== решение =========================
+## // десятичное посимвольное преобразование
+for var i:=1000 to 9999 do
+begin
+var digit := i;
+var digit_1 := digit div 1000 mod 10; 
+var digit_2 := digit div 100 mod 10; 
+var digit_3 := digit div 10 mod 10; 
+var digit_4 := digit mod 10; 
+var num1 := digit_1 + digit_2;
+var num2 := digit_2 + digit_3;
+var num3 := digit_3 + digit_4;
+var first := IntToStr(Min(num1, num2, num3));
+var second := IntToStr(Max(num1, num2, num3));
+if (first + second = '1515') then 
+  begin
+    Print('Урра! Число:',i);
+    break;
+  end;
+end;
+{
+!!! Чисел, удовлетворяющих условию может быть не ОДНО!
+В условии сказано БОЛЬШЕЕ!
+Чтобы отсечь меньшие, усложняем условие:
+(i <> 6969) and (i <> 7878) and (i <> 8787) and 
+}
