@@ -1,0 +1,20 @@
+## //десятичное посимвоьное преобразование
+for var i:=10000 to 99999 do 
+begin
+var digit := i;
+var digit_1 := digit div 10000; 
+var digit_2 := digit div 1000 mod 10; 
+var digit_3 := digit div 100 mod 10; 
+var digit_4 := digit div 10 mod 10; 
+var digit_5 := digit mod 10; 
+var num1 := digit_1 + digit_3 + digit_5;
+var num2 := digit_2 + digit_4;
+var first := IntToStr(Min(num1,num2));
+var second := IntToStr(Max(num1,num2));
+var s1 := first + second;
+if (s1 = '621') then
+  begin
+    Print('Урра, победа:',i);
+    break;
+  end;
+end;
