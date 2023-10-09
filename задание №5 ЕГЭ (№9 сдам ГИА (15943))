@@ -1,0 +1,19 @@
+## // №9 (№15943)
+uses school;
+var a := ReadInteger('Введите число:');
+var a_digits := ToBase(a,2).Println;
+var cnt := 0;
+for var i:=1 to Length(a_digits) do cnt += 1;
+Println('Длина числа:', cnt);
+if (a_digits[cnt] = '1') then a_digits := a_digits + 1
+    else a_digits := a_digits + 0;
+Println(a_digits);
+var sum := 0;
+for var i:=1 to Length(a_digits) do 
+    if a_digits[i] = '1' then sum += 1;
+Println('сумма цифр числа:',sum); 
+var ostatok := sum mod 2; 
+Println('Остаток от деления на 2:', ostatok);
+a_digits := a_digits + ostatok;
+Println('Итог:',a_digits);
+Println('Окончательное число:',Dec(a_digits,2));
