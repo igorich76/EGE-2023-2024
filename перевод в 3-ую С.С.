@@ -1,0 +1,8 @@
+## //перевод числа в троичную сс
+var (s,x) := ('',readinteger);
+while x>0 do
+  begin
+    s := x mod 3 + s;
+    x := x div 3;
+  end;
+Print(s);
