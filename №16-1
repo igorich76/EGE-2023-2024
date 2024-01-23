@@ -1,0 +1,7 @@
+## //задача №2 с листка с курсов Кирилл которые вёл
+function F(n: Integer): Integer;
+begin  
+if n < 7 then Result:=7 
+  else Result:=2*n + F(n-1);
+end;
+Print(F(2024)-F(2022))
