@@ -1,0 +1,7 @@
+## //задача №4
+function F(n: BigInteger): BigInteger;
+begin
+  if n=1 then Result:=1
+    else if n>1 then Result:=n*F(n-1)
+end;
+Print(F(2023) / F(2020))
