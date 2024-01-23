@@ -1,0 +1,10 @@
+## // задача №5 пипец, как долго считает... Чёт перемудрили авторы.
+//пришлось у ментора спрашивать
+function F(n: bigInteger): bigInteger;
+begin
+  if n < 9 then Result := n
+    else if n >= 9 then Result := F(n mod 9) + F(n div 9);
+end;
+
+Range(new BigInteger(4*6**20), new BigInteger(5*6**20))
+  .where(n → F(n)=121).Count.Print;
