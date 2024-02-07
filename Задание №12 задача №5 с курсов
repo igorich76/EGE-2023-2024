@@ -1,0 +1,23 @@
+## // задача с курсов №5, ответ 413, как орешки :))
+var (s, n, sum) := ('', 0, 0);
+
+for n := 4 to 500 do
+begin
+  s := '5' + '2' * n;
+  
+  while ('52' in s) or ('2222' in s) or ('1122' in s) do
+  begin
+    if ('52' in s) then s := s.Replace('52', '1', 1);
+    if ('2222' in s) then s := s.Replace('2222', '5', 1);
+    if ('1122' in s) then s := s.Replace('1122', '25', 1);
+  end;
+  
+  for var i:=1 to Length(s) do sum += StrToInt(s[i]);
+  
+  if (sum = 88) then 
+    begin
+      Println(n, s, sum); break;
+    end;
+    
+  sum := 0;
+end;
