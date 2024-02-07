@@ -1,0 +1,21 @@
+## // задача с курсов №4, ответ 29
+var (s, n, sum) := ('', 0, 0);
+for n := 4 to 100 do
+begin
+  s := '2' + '5' * n;
+  
+  while ('25' in s) or ('355' in s) or ('555' in s) do
+  begin
+    if ('25' in s) then s := s.Replace('25', '5', 1);
+    if ('355' in s) then s := s.Replace('355', '52', 1);
+    if ('555' in s) then s := s.Replace('555', '3', 1);
+  end;
+  
+  for var i := 1 to Length(s) do sum += StrToInt(s[i]);
+  
+  Println(n, s, sum); // эта строка для контроля...
+  if (sum = 17) then break;
+  sum := 0;
+  
+end;
+Println('Ответ:', n); 
