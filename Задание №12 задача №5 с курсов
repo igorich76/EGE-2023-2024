@@ -21,3 +21,27 @@ begin
     
   sum := 0;
 end;
+//////////////////// переделки от ментора учёл //////////////////////////
+// объявление переменных в цикле, вместо strtoint взял ToDigit
+## // задача с курсов №5, ответ 413
+
+for var n := 4 to 500 do
+begin
+  var (s, sum) := ('5' + '2' * n, 0);
+  
+  while ('52' in s) or ('2222' in s) or ('1122' in s) do
+  begin
+    if ('52' in s) then s := s.Replace('52', '1', 1);
+    if ('2222' in s) then s := s.Replace('2222', '5', 1);
+    if ('1122' in s) then s := s.Replace('1122', '25', 1);
+  end;
+  
+  for var i:=1 to Length(s) do sum += s[i].ToDigit;
+  
+  if (sum = 88) then 
+    begin
+      Println(n, s, sum); break;
+    end;
+    
+  sum := 0;
+end;
