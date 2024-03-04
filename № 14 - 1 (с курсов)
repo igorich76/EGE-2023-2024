@@ -1,0 +1,11 @@
+// долго думал, как гиганские числа записывать, похоже, нашёл
+##
+var n := 7*biginteger.pow(512,1912)+6*biginteger.pow(64,1954)-5*biginteger.pow(8,1991)-4*biginteger.pow(8,1980)-2022;
+var cnt := 0;
+
+while n <> 0 do
+  begin
+    if (n mod 8 = 7) then cnt += 1;
+    n := n div 8;
+  end;
+print(cnt);
