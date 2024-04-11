@@ -1,0 +1,21 @@
+## //№3 (39238) №9 ЕГЭ
+uses xlsx;
+var t := ReadXLSXAsInts('09-3-11-04.xlsx');
+var (maxi,indmax,cnt) := (t[0,0],0,0);
+for var i:=0 to Length(t)-1 do
+  begin
+  for var j:=0 to 2 do
+    begin
+    if t[i,j] > maxi then 
+      begin
+        maxi := t[i,j];
+        indmax := j;
+        if (indmax = 0) then if (maxi**2 = t[i,1]**2 + t[i,2]**2) then cnt += 1;
+        if (indmax = 1) then if (maxi**2 = t[i,0]**2 + t[i,2]**2) then cnt += 1;
+        if (indmax = 2) then if (maxi**2 = t[i,0]**2 + t[i,1]**2) then cnt += 1;
+      end; 
+    end;
+    Println(t[i],'большее:',maxi,'индекс:',indmax);
+    maxi := 0;
+  end;
+cnt.Println
