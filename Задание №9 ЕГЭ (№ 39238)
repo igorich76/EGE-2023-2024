@@ -15,7 +15,7 @@ for var i:=0 to Length(t)-1 do
         if (indmax = 2) then if (maxi**2 = t[i,0]**2 + t[i,1]**2) then cnt += 1;
       end; 
     end;
-    Println(t[i],'большее:',maxi,'индекс:',indmax);
+    Println(t[i],'большее:',maxi,'индекс:',indmax); //не обязательная строка...
     maxi := 0;
   end;
 cnt.Println
