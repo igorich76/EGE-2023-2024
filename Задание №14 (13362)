@@ -1,0 +1,5 @@
+##
+uses school;
+var a := 125 + 25bi**3 + 5bi**9;
+var b := ToBase(a,5).Println
+// ответ: 7
