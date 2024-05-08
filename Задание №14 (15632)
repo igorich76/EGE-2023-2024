@@ -1,4 +1,4 @@
-##
+## // ответ: 27
 uses school;
 var a := 4bi**14 + 2bi**32 - 4;
 var b := Bin(a).CountOf('1').Print;
